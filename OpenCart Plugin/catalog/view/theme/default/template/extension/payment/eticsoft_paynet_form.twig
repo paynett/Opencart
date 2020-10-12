@@ -1,0 +1,32 @@
+{{ header }}
+{{ column_left }}
+{{ column_right }}
+
+<div class="container">{{ content_top }}
+
+
+<section>
+    <div class="row">
+        <div class="col-xs-12 col-sm-6">
+            <h2>Kredi Kartı ile Güvenli Ödeme</h2>
+                    Bu sayfada kredi kartınız ile güvenli ödeme yapabilirsiniz.<br/>
+                    3D güvenlik için telefonunuza SMS gönderilebilir. 
+        </div>
+         <div class="col-xs-12 col-sm-6">
+            <img src="{{ HTTPS_SERVER }}catalog/view/theme/default/image/eticsoft_paynet/available_cards.png" style="max-width:100%"/>
+         </div>
+    </div>
+    {% if error_message %}
+		<div class="row">
+            <div class="alert alert-danger" id="errDiv">
+                Ödemeniz yapılamadı. Bankanızın cevabı: <br/> 
+                <b>{{ error_message}}</b><br/>
+                Lütfen formu kontrol edip yeniden deneyiniz.
+            </div>
+        </div>
+    {% endif %}
+	
+    <hr/>
+	{{ payment_button }}
+</section>
+{{ footer }}
